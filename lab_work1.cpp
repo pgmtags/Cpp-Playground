@@ -1,26 +1,34 @@
-/*
-# Andrij Zyniuk IPZ 22k/1 | Variant - 3
-
-1. c = (a & b);
-2. (sq(a) + 2 * b * c + sq(c)) * PI / 2
-*/
 #include <iostream>
-#include <cstdlib>
-#include <math.h>
-#include <iomanip>
+#include <limits>
+#include <string>
+#include <cmath>
 
 using namespace std;
 
-int main(){
-    float A, B, C;
-    const double PI = 3.14;
+// Функція для введення числа з перевіркою
+double getInput(const string &prompt) {
+    double value;
+    while (true) {
+        cout << prompt;
+        if (cin >> value) {
+            break;
+        } else {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input. Please enter a number." << endl;
+        }
+    }
+    return value;
+}
 
-    cout << "Please, enter A:";
-    cin >> A;
-    cout << "Please, enter B:";
-    cin >> B;
-    cout << "Please, enter C:";
-    cin >> C;
+int main() {
+    double A, B, C, sum;
+    cout << "Zyniuk Andrij IPZ 22k/1, 3 var" << endl;
 
-    
+    A = getInput("Please, enter number A: ");
+    B = getInput("Please, enter number B: ");
+    C = getInput("Please, enter number C: ");
+    cout << "Solution: " << (sqrt(A) / C) + (B / 1) * (4.0 / 3.0) << endl;
+
+    return 0;
 }
