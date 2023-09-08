@@ -1,7 +1,11 @@
 {
     "cmake.configureOnOpen": false,
     "files.associations": {
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "*.tcc": "cpp",
+        "string": "cpp",
+        "limits": "cpp",
+        "ctime": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
