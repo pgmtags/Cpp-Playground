@@ -1,7 +1,7 @@
 #include <iostream>
 #include <limits>
 #include <string>
-#include <cmath>
+#include <conio.h>
 
 using namespace std;
 
@@ -28,7 +28,7 @@ int main() {
     A = getInput("Please, enter number A: ");
     B = getInput("Please, enter number B: ");
     C = getInput("Please, enter number C: ");
-    cout << "Solution: " << (sqrt(A) / C) + (B / 1) * (4.0 / 3.0) << endl;
+    cout << "Solution: " << (A * A / C) + (B / 1) * (4.0 / 3.0) << endl;
 
-    return 0;
+    _getch();
 }
