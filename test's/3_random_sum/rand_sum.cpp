@@ -1,16 +1,17 @@
 /*
-Написати програму, яка виводить послідовність з 10 рандомних числе в діапазоні(-100, 100), виводить індекс 3-ого від'ємного
+Написати программу. яка виводить суму 10 рандомних чисел у зоні (1, 10)
 */
 
 #include <iostream>
 #include <random>
+#include <numeric>
 #include <conio.h>
 
 using namespace std;
 
 const int ARRAY_SIZE = 10;
-const int MIN_VALUE = -100;
-const int MAX_VALUE = 100;
+const int MIN_VALUE = 1;
+const int MAX_VALUE = 10;
 int randomDigits[ARRAY_SIZE] = {};
 
 int main() {
@@ -24,6 +25,6 @@ int main() {
         cout << randomDigits[i] << ", ";
     }
 
-    cout << endl << "Third negative symbol is: " << randomDigits[ARRAY_SIZE - 3];
+    cout << endl << "Sum all digits : " << accumulate(begin(randomDigits), end(randomDigits), 0, plus<int>()) << endl;
     _getch();
 }

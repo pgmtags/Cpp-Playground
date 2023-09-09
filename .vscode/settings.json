@@ -5,7 +5,8 @@
         "*.tcc": "cpp",
         "string": "cpp",
         "limits": "cpp",
-        "ctime": "cpp"
+        "ctime": "cpp",
+        "4_": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
