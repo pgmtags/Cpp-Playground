@@ -13,7 +13,7 @@ int main() {
 
     if (C > VARIANT) { F1 = tanh(A); } 
     else { F2 = sqrt(A); }
-    F3 = pow(F1, F2);
+    F3 = pow(A, B);
     cout << "A: " << A << "\nB: " << B << "\nC: " << C << "\nVariant: " << VARIANT << "\nF1: " << F1 << "\nF2: " << F2 << "\nF3: " << F3 << endl;
     _getch();
 }
