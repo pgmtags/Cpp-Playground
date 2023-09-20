@@ -16,7 +16,7 @@ void printPascalTriangle(int numRows) {
             long long coef = binomialCoefficient(i, j);
             cout << setw(3) << coef << " ";
         }
-        cout << std::endl;
+        cout << endl;
     }
 }
 
