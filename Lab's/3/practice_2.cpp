@@ -2,7 +2,7 @@
 
 #include <iostream> 
 #include <iomanip> 
-#include 
+#include <conio.h>
 
 using namespace std; 
 
@@ -33,5 +33,5 @@ int main() {
 
     printPascalTriangle(numRows); 
 
-    return 0;
+    _getch();
 }
