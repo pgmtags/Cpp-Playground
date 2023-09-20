@@ -1,43 +1,31 @@
 #include <iostream>
-#include <vector>
+#include <iomanip>
 
 using namespace std;
 
-// Функция для вычисления факториала
-int factorial(int n) {
-    if (n <= 1)
+long long binomialCoefficient(int n, int k) {
+    if (k == 0 || k == n)
         return 1;
     else
-        return n * factorial(n - 1);
+        return binomialCoefficient(n - 1, k - 1) + binomialCoefficient(n - 1, k);
 }
 
-// Функция для вывода отцентрированного треугольника Пифагора в массив
-void generatePifagoreanTriangle(int n) {
-    vector<vector<int>> triangle(n, vector<int>(n, 0));
-
-    // Заполнение треугольника Пифагора
-    for (int i = 0; i < n; ++i) {
+void printPascalTriangle(int numRows) {
+    for (int i = 0; i < numRows; ++i) {
         for (int j = 0; j <= i; ++j) {
-            triangle[i][j] = factorial(i) / (factorial(j) * factorial(i - j));
+            long long coef = binomialCoefficient(i, j);
+            cout << setw(3) << coef << " ";
         }
-    }
-
-    // Вывод отцентрированного треугольника Пифагора
-    for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < n - i - 1; ++j)
-            cout << " ";
-        for (int j = 0; j <= i; ++j)
-            cout << triangle[i][j] << " ";
-        cout << "\n";
+        cout << std::endl;
     }
 }
 
 int main() {
-    int n;
-    cout << "Please, Enter N: ";
-    cin >> n;
+    int numRows;
+    cout << "Enter the number of rows for Pascal's Triangle: ";
+    cin >> numRows;
 
-    generatePifagoreanTriangle(n);
+    printPascalTriangle(numRows);
 
     return 0;
 }
