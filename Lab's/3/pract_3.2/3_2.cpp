@@ -15,15 +15,15 @@ int main() {
     double a = -9;  // Початок інтервалу
     double b = 2;   // Кінець інтервалу
     double h = 1.5;  // Крок
-    
+    double x = a;
 
     cout << "Initial formula: y(x) = x - sqrt(x) + 2" << endl;
 
     // Обчислення та виведення значень функції для кожного кроку
-    for (double x = a; x <= b; x += h) {
+    while (x <= b) {
         double y = function_y(x);
-
         cout << "y(" << x << ") = " << y << endl;
+        x += h;  // Збільшення x на крок h
     }
 
     _getch();
