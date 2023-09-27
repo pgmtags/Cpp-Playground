@@ -1,12 +1,12 @@
-//Зинюк Андрій Андрійович ІПЗ 22К\1, 3 Варіант
 #include <iostream>
 #include <conio.h>
 
 using namespace std;
 
 int main() {
-    int N;
-    long long X = 1;
+    cout << "Zyniuk Andrij IPZ 22k/1, 3 var\n\n";
+
+    int N, X;
     cout << "Enter the value of N: ";
     cin >> N;
 

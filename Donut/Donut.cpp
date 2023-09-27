@@ -46,5 +46,4 @@ int main() {
         }
         usleep(30000);
     }
-    _getch();
 }

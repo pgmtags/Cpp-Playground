@@ -5,6 +5,8 @@
 using namespace std;
 
 int main() {
+    cout << "Zyniuk Andrij IPZ 22k/1, 3 var\n\n";
+
     float A, B, F1 = 0, F2 = 0, F3;  
     int C, VARIANT = 3;
 

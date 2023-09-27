@@ -1,29 +1,25 @@
-//11 варіант    
-
-//Ввімкнення бібліотек
 #include <iostream>
-#include <cmath>
+#include <conio.h>
 
-//Викорситання простору std
 using namespace std;
 
-//Головна функція
 int main() {
+    cout << "Zyniuk Andrij IPZ 22k/1, 3 var\n\n";
+    
+    int N;
+    long long X = 1;
+    cout << "Enter the value of N: ";
+    cin >> N;
 
-//Ініціалізація змінних (int, float)
-    int x, i;
-    float S, e = 2.718;
-
-    // Задання змінної
-    cout << "Enter: "; // Вивід тексту у консоль
-    cin >> x;  // Додати в змінну, те що ввід користувач у консолі
-
-    // Цикл, поки i не буде равно число N, при кожній іттерації +1 до i
-    for (i = 2; i <= 9; i++) {
-        S += pow(e, -i*x) / i*i;
+    cout << "Formula: X = ";
+    for (int i = 0; i < 5; i++) {
+        if (i != 0)
+            cout << " * ";
+        cout << (N + i);
+        X *= (N + i);
     }
 
-    cout << "\nResult: " << S; // Вивід результату
+    cout << "\n\nResult (X) for N = " << N << " is: " << X << endl;
 
-    return 0;  // Закінчення програми
+    _getch();
 }
