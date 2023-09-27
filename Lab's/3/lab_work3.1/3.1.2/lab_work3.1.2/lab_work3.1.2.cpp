@@ -1,5 +1,4 @@
 #include <iostream>
-#include <conio.h>
 
 using namespace std;
 
@@ -21,5 +20,6 @@ int main() {
 
     cout << "\n\nResult (X) for N = " << N << " is: " << X << endl;
 
-    _getch();
+    cin.get();
+    return 0;
 }

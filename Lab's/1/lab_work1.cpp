@@ -1,7 +1,6 @@
 #include <iostream>
 #include <limits>
 #include <string>
-#include <conio.h>
 
 using namespace std;
 
@@ -15,5 +14,6 @@ int main() {
 
     cout << "Solution: " << (A * A / C) + (B / 1) * (4.0 / 3.0) << endl;
 
-    _getch();
+    cin.get();
+    return 0;
 }
