@@ -1,30 +1,29 @@
-//Зинюк Андрій Андрійович ІПЗ 22К\1, 3 Варіант
+//11 варіант    
 
+//Ввімкнення бібліотек
 #include <iostream>
 #include <cmath>
-#include <conio.h>
 
+//Викорситання простору std
 using namespace std;
 
+//Головна функція
 int main() {
-    int X = 0;
-    double S = 0.0;  // Initialize S to 0
-    int i = 1;
 
-    cout << "Please, Enter X: ";
-    cin >> X;  // Use >> to read input into X
+//Ініціалізація змінних (int, float)
+    int x, i;
+    float S, e = 2.718;
 
-    cout << "Formula: S = \n";
-    for (i; i <= 7; i++) {
-        if (i != 1)
-            cout << " + ";
-        cout << "(" << i+2 << ") * sin(" << i << " * " << X << ")";
-        S += (i + 2) * sin(i * X);
+    // Задання змінної
+    cout << "Enter: "; // Вивід тексту у консоль
+    cin >> x;  // Додати в змінну, те що ввід користувач у консолі
+
+    // Цикл, поки i не буде равно число N, при кожній іттерації +1 до i
+    for (i = 2; i <= 9; i++) {
+        S += pow(e, -i*x) / i*i;
     }
 
-    cout << "\n\nResult (S): " << S;
+    cout << "\nResult: " << S; // Вивід результату
 
-    _getch();  // Call _getch() with parentheses
-
-    return 0;
+    return 0;  // Закінчення програми
 }
