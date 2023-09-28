@@ -1,11 +1,12 @@
 #include <iostream>
 #include <cmath>
-#include <conio.hs>
 
 using namespace std;
 
 int main() {
-    float A, B, F1 = 0, F2 = 0, F3;  
+    cout << "Zyniuk Andrij IPZ 22k/1, 3 var\n\n";
+
+    float A, B, F1 = 0, F2 = 0;  
     int C, VARIANT = 3;
 
     cout << "Please, enter number A, B, and an integer number: ";
@@ -13,7 +14,9 @@ int main() {
 
     if (C > VARIANT) { F1 = tanh(A); } 
     else { F2 = sqrt(A); }
-    F3 = pow(A, B);
-    cout << "A: " << A << "\nB: " << B << "\nC: " << C << "\nVariant: " << VARIANT << "\nF1: " << F1 << "\nF2: " << F2 << "\nF3: " << F3 << endl;
-    _getch();
+
+    cout << "A: " << A << "\nB: " << B << "\nC: " << C << "\nVariant: " << VARIANT << "\nF1: " << F1 << "\nF2: " << F2 << "\nF3: " << pow(A, B) << endl;
+
+    cin.get();
+    return 0;
 }
