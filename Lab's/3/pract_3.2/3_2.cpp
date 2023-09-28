@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cmath>
-#include <conio.h>
 
 using namespace std;
 
@@ -9,25 +8,18 @@ double function_y(double x) {
 }
 
 int main() {
-    /*
-    за умовою (-10; 3), тому я просто виписав їх у a = -9, b = 2
-    */
     double a = -9;  // Початок інтервалу
     double b = 2;   // Кінець інтервалу
     double h = 1.5;  // Крок
-    double x;
 
-    cout << "Enter X: ";
-    cin >> x;
-    
     cout << "Initial formula: y(x) = x - sqrt(x) + 2" << endl;
 
     // Обчислення та виведення значень функції для кожного кроку
-    while (a <= b) {
+    for (double x = a; x <= b; x += h) {
         double y = function_y(x);
+
         cout << "y(" << x << ") = " << y << endl;
-        x += h;  // Збільшення x на крок h
     }
 
-    _getch();
+    return 0;
 }
