@@ -3,23 +3,35 @@
 
 using namespace std;
 
-double function_y(double x) {
-    return (x - sqrt(x) + 2);
+double calculate_y(double x) {
+    if (x < 0) {
+        cout << "Initial formula: y(x) = sqrt(|x + ln(x)| )\n";
+        result =  sqrt(fabs(x + log10(x)));
+    } else if (x > 3) {
+        cout << "Initial formula: y(x) = pow(x, 3) + sqrt(3) )\n";
+        result =  pow(x, 3) + sqrt(x);
+    } else {
+        cout << "Initial formula: y(x) = 0 )\n";
+        result = (x + 1);
+    }
+    return result;
 }
 
 int main() {
-    double a = -9;  // Початок інтервалу
-    double b = 2;   // Кінець інтервалу
-    double h = 1.5;  // Крок
+    cout << "Zyniuk Andrij IPZ 22k/1, 3 var\n\n";
 
-    cout << "Initial formula: y(x) = x - sqrt(x) + 2" << endl;
+    double start = -10.0, end = 10.0, step = 1, current_x;
 
-    // Обчислення та виведення значень функції для кожного кроку
-    for (double x = a; x <= b; x += h) {
-        double y = function_y(x);
+    cout << "Please, Enter X: ";
+    cin >> current_x;
 
-        cout << "y(" << x << ") = " << y << endl;
+    // Calculate and display values of the function for each step
+    while (current_x <= end) {
+        cout << "y(" << current_x << ") = " << calculate_y(current_x) << endl;
+        current_x += step;  // Increment x by the step
     }
 
+    // Pause the program to view the results
+    cin.get();
     return 0;
 }
