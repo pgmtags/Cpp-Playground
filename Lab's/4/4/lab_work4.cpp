@@ -1,46 +1,39 @@
 // Заданий одномірний масив a[10]. Знайти кількість від’ємних елементів масиву
 
 #include <iostream>
-#include <cmath>
 
 using namespace std;
 
-int main() {
-    printf('Please, Enter 10 chars: \n')
-    for (int i = 0;  i < STEPS; i++) {
-        cin >> storage[i];
-        if (storage[i] >= 0) {
-            
-        }
-    }
-}
-
-
-#include <iostream>
-using namespace std;
 int main()
 {
-    int STEPS = 10, storage[STEPS];
+    const int STEPS = 10; // Кількість елементів у масиві
+    int storage[STEPS]; // Оголошення масиву
 
-    int i, summa = 0;
-    printf(" Input the array elements\n");
+    cout << "Please, Input the array elements:\n";
 
-    for (i = 0; i < STEPS; i++) {
-        cout << "a[" << i << "]=";
-        cin >> a[i]; //введення елементів масиву
+    // Введення елементів масиву
+    for (int i = 0; i < STEPS; i++) {
+        cout << "Storage[" << i << "] = ";
+        cin >> storage[i];
     }
 
-    cout << "\n The inputted array\n";
+    cout << "\nThe inputted array:\n";
 
-    for (i = 0; i < STEPS; i++){
-        cout << "a[" << i << "]=" << a[i] << endl; //виведення елементів
+    // Виведення елементів масиву
+    for (int i = 0; i < STEPS; i++) {
+        cout << "Storage[" << i << "] = " << storage[i] << endl;
     }
 
-    for (i = 0; i < STEPS; i++) {
-        if (a[i] < 0){
-            summa = summa + a[i]; //знаходження суми від'ємних елементів
+    int negativeCount = 0; // Лічильник від'ємних елементів
+
+    // Підрахунок кількості від'ємних елементів
+    for (int i = 0; i < STEPS; i++) {
+        if (storage[i] < 0) {
+            negativeCount++;
         }
     }
-    cout << "\n summa= " << summa << endl;
+
+    cout << "\nResult: " << negativeCount << " negative elements\n";
+
     return 0;
 }
