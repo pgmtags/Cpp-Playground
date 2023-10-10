@@ -7,7 +7,7 @@ double calculate_y(double x) {
     double result;  // Declare result variable
     if (x < 0) {
         cout << "Initial formula: y(x) = sqrt(|x + ln(x)| )\n";
-        result = sqrt(fabs(x + log(x)));
+        result = sqrt(fabs(x + log10(x)));
     } else if (x > 3) {
         cout << "Initial formula: y(x) = pow(x, 3) + sqrt(3)\n";
         result = pow(x, 3) + sqrt(3);
