@@ -4,27 +4,23 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
     const int STEPS = 10; // Кількість елементів у масиві
     int storage[STEPS]; // Оголошення масиву
-
-    cout << "Please, Input the array elements:\n";
-
+    int negativeCount = 0; // Лічильник від'ємних елементів
+    
     // Введення елементів масиву
+    cout << "Please, Input the array elements:\n";
     for (int i = 0; i < STEPS; i++) {
         cout << "Storage[" << i << "] = ";
         cin >> storage[i];
     }
 
-    cout << "\nThe inputted array:\n";
-
     // Виведення елементів масиву
+    cout << "\nThe inputted array:\n";
     for (int i = 0; i < STEPS; i++) {
         cout << "Storage[" << i << "] = " << storage[i] << endl;
     }
-
-    int negativeCount = 0; // Лічильник від'ємних елементів
 
     // Підрахунок кількості від'ємних елементів
     for (int i = 0; i < STEPS; i++) {
@@ -34,6 +30,7 @@ int main()
     }
 
     cout << "\nResult: " << negativeCount << " negative elements\n";
-
+    
+    cin.get();
     return 0;
 }
