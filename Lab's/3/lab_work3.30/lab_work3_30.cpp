@@ -4,34 +4,32 @@
 using namespace std;
 
 double calculate_y(double x) {
-    double result;  // Declare result variable
     if (x < 0) {
         cout << "Initial formula: y(x) = sqrt(|x + ln(x)| )\n";
-        result = sqrt(fabs(x + log10(x)));
+        return sqrt(fabs(x + log10(x)));
     } else if (x > 3) {
         cout << "Initial formula: y(x) = pow(x, 3) + sqrt(3)\n";
-        result = pow(x, 3) + sqrt(3);
+        return pow(x, 3) + sqrt(3);
     } else {
         cout << "Initial formula: y(x) = 0\n";
-        result = (x + 1);
+        return x + 1;
     }
-    return result;
 }
 
 int main() {
-    cout << "Zyniuk Andrij IPZ 22k/1, 3 var\n\n";
+    const double start = -10;
+    const double end = 10;
+    const double step = 1;
+    double current_x;
 
-    double start = -10.0, end = 10.0, step = 1, current_x;
-
-    cout << "Please, Enter X: ";
+    cout << "Zyniuk Andrij IPZ 22k/1, 3 var\n\nPlease enter X: ";
     cin >> current_x;
 
     do {
         cout << "y(" << current_x << ") = " << calculate_y(current_x) << endl;
-        current_x += step;  // Increment x by the step
+        current_x += step;
     } while (current_x <= end);
 
-    // Pause the program to view the results
     cin.get();
     return 0;
 }

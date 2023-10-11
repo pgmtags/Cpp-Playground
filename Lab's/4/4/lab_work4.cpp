@@ -11,7 +11,7 @@ int main() {
     
     // Введення елементів масиву та підрахунок негативних елементів
     cout << "Please, Input the array elements:\n";
-    
+
     for (int i = 0; i < STEPS; i++) {
         cout << "Storage[" << i << "] = ";
         cin >> storage[i];
