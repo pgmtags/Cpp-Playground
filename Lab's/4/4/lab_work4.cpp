@@ -9,26 +9,16 @@ int main() {
     int storage[STEPS]; // Оголошення масиву
     int negativeCount = 0; // Лічильник від'ємних елементів
     
-    // Введення елементів масиву
+    // Введення елементів масиву та підрахунок негативних елементів
     cout << "Please, Input the array elements:\n";
+    
     for (int i = 0; i < STEPS; i++) {
         cout << "Storage[" << i << "] = ";
         cin >> storage[i];
-    }
-
-    // Виведення елементів масиву
-    cout << "\nThe inputted array:\n";
-    for (int i = 0; i < STEPS; i++) {
-        cout << "Storage[" << i << "] = " << storage[i] << endl;
-    }
-
-    // Підрахунок кількості від'ємних елементів
-    for (int i = 0; i < STEPS; i++) {
-        if (storage[i] < 0) {
-            negativeCount++;
+        if (storage[i] < 0) { 
+            negativeCount++; //Таймер від'ємних чисел
         }
     }
-
     cout << "\nResult: " << negativeCount << " negative elements\n";
     
     cin.get();
