@@ -21,6 +21,7 @@ int main() {
     }
     cout << "\nResult: " << negativeCount << " negative elements\n";
     
+    cin.ignore();
     cin.get();
     return 0;
 }

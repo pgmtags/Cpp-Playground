@@ -25,11 +25,19 @@ int main() {
     cout << "Zyniuk Andrij IPZ 22k/1, 3 var\n\nPlease enter X: ";
     cin >> current_x;
 
+    while (current_x > end || current_x < start) {
+        cout << "Please enter a number in the range (-10, 10): ";
+        cin.clear();
+        cin.ignore();
+        cin >> current_x;
+    }
+
     do {
         cout << "y(" << current_x << ") = " << calculate_y(current_x) << endl;
         current_x += step;
     } while (current_x <= end);
 
+    cin.ignore();
     cin.get();
     return 0;
 }
