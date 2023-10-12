@@ -37,6 +37,7 @@ int main() {
         current_x += step;
     } while (current_x <= end);
 
+    // Pause the program to view the results
     cin.ignore();
     cin.get();
     return 0;
