@@ -1,25 +1,31 @@
+// creat arr var * 10, fill chars in range -100, 100
+// sum + elements in arr
+
+// 3 Var
+
 #include <iostream>
-#include <ctime>
 #include <cstdlib>
 
 using namespace std;
 
+#include <iostream>
+
 int main() {
-    srand(time(NULL));
-    int n = rand();
+    const int n = 30;
     int arr[n];
-    int *ptr = arr;
+    int sum;
 
     // filling the array
-    for (int i = 0; i < n; i++) { arr[i] = rand(); }
-
-    //// output the array to console
-    //printf("Array: ");
-    //for (int i = 0; i < n; i++) { cout << arr[i] << " "; }
-
-    // output the array to console
+    for (int i = 0; i < n; i++) {
+        arr[i] = rand() % 201 - 100;
+    }
+    
+    // find positive chars
+    cout << "All positive chars: \n";
     for (int *ptr = &arr[0]; ptr < &arr[n]; ptr++) {
-        printf("%d ", *ptr); // Вивести значення, на яке вказує вказівник
+        if (*ptr > 0) {
+            cout << *ptr << "\n";
+        }
     }
 
     cin.get();
