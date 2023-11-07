@@ -8,8 +8,6 @@
 
 using namespace std;
 
-#include <iostream>
-
 int main() {
     const int n = 30;
     int arr[n];
