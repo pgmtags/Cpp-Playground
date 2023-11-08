@@ -11,42 +11,48 @@
 using namespace std;
 
 int main(){
-    int minPositive = INT_MAX;
-    const int LENGTH = 10;
-    const int half_LENGTH = LENGTH / 2;
-
-    int array[LENGTH];
-    int pairedArray[half_LENGTH];
-    
-
+    const int arraySize = 10;
+    int* originalArray = new int[arraySize];
     srand(static_cast<unsigned int>(time(nullptr)));
 
-    // filling array with random numbers & output to console
-    printf("MainArray: ");
-    for (int count = 0; count < LENGTH; count++) {
-        array[count] = rand() % (100 - (-140) + 1) + (-140);
-        cout << array[count] << " ";
+    // Generate a random number in the range (-140, 100)
+    for (int i = 0; i < arraySize; ++i) {
+        originalArray[i] = rand() % 241 - 140;
     }
 
-    // find paired element & output to console
-    printf("\nPaired Elements Array: ");
-    int* mainArrayPTR = array;
-    int* pairedArrayPTR = pairedArray;
+    // find paired elements
+    int* pairedArray = new int[arraySize];
+    int pairedCount = 0;
 
-    for (int count = 0; count < half_LENGTH; count++) {
-        *pairedArrayPTR = *(mainArrayPTR + 2 * count); // Copy every second element
-        cout << *pairedArrayPTR << " ";
-        pairedArrayPTR++;
+    for (int i = 0; i < arraySize; i += 2) {
+        pairedArray[pairedCount] = originalArray[i];
+        pairedCount++;
     }
 
-    // find minimum positive value encountered
-    for (int count = 0; count < half_LENGTH; count++) {
-        if (pairedArray[count] > 0 && pairedArray[count] < minPositive) {
-            minPositive = pairedArray[count];
+    //Find the minimum positive element in the paired array
+    int minPositive = INT_MAX; // Initialize to a large value
+
+    for (int i = 0; i < pairedCount; ++i) {
+        if (pairedArray[i] > 0 && pairedArray[i] < minPositive) {
+            minPositive = pairedArray[i];
         }
     }
-    cout << "\nMinimum positive value in paired array: " << minPositive;
 
+    cout << minPositive << endl;
+    cout << "Original Array: ";
+    for (int i = 0; i < arraySize; ++i) {
+        cout << originalArray[i] << " ";
+    }
+
+    cout << "\nPaired Elements Array: ";
+    for (int i = 0; i < pairedCount; ++i) {
+        cout << pairedArray[i] << " ";
+    }
+
+    originalArray = nullptr;
+    pairedArray= nullptr;
+    delete[] originalArray;
+    delete[] pairedArray;
     cin.get();
     return 0;
 }
