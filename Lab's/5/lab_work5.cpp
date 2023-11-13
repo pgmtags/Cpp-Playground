@@ -21,7 +21,7 @@ int main(){
     }
 
     // find paired elements
-    int* pairedArray = new int[arraySize];
+    int* pairedArray = new int[arraySize/2];
     int pairedCount = 0;
 
     for (int i = 0; i < arraySize; i += 2) {
@@ -38,7 +38,7 @@ int main(){
         }
     }
 
-    cout << minPositive << endl;
+    cout << "MinPos: " << minPositive << endl;
     cout << "Original Array: ";
     for (int i = 0; i < arraySize; ++i) {
         cout << originalArray[i] << " ";
@@ -49,10 +49,9 @@ int main(){
         cout << pairedArray[i] << " ";
     }
 
-    originalArray = nullptr;
-    pairedArray= nullptr;
-    delete[] originalArray;
-    delete[] pairedArray;
+    originalArray, pairedArray = nullptr;
+    delete[] originalArray, pairedArray;
+
     cin.get();
     return 0;
 }
