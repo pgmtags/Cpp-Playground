@@ -2,7 +2,7 @@
 // extract in new array paired !Elements!
 // find min !Element! in positive
 //
-// variant 3, Andrij Zyniuk, ІПЗ 22К/1
+// variant 3, Andrij_Zyniuk
 
 #include <iostream>
 #include <cstdlib>
