@@ -55,7 +55,8 @@
         "format": "cpp",
         "span": "cpp",
         "variant": "cpp",
-        "cstdarg": "cpp"
+        "cstdarg": "cpp",
+        "cstring": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled",
     "code-runner.executorMapByFileExtension": {
