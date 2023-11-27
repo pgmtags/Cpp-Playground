@@ -154,5 +154,8 @@
         "bat": ".bat",
         "powershell": ".ps1",
         "typescript": ".ts"
-    }
+    },
+    "cSpell.words": [
+        "Прізвище"
+    ]
 }
