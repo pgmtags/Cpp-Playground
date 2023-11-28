@@ -1,31 +1,38 @@
 // Дано одновимірний масив a, який містить n елементів
 // Знайти кількість максимальних елементів масиву
 
+
 #include <iostream>
+#include <random>
 
 using namespace std;
 
+
+// function generator random chars
+int randomInt(int min, int max) {
+    random_device rd;
+    mt19937 gen(rd());
+
+    // distribution within a specified range
+    uniform_int_distribution<int> dist(min, max);
+
+    return dist(gen);
+}
+
 int main() {
-    int STEPS; // Кількість елементів у масиві
-    
-    cout << "Please, Input the length array: ";
-    cin >> STEPS;
-    
-    int storage[STEPS]; // Оголошення масиву
-    int negativeCount = 0; // Лічильник від'ємних елементів
-    
-    // Введення елементів масиву та підрахунок негативних елементів
-    cout << "Please, Input the array elements: \n";
+    const int MIN = -10, 
+                    MAX = 10, 
+                    STEPS = randomInt(0, MAX);
+    int maxCount = 0, 
+         storage[STEPS]; 
 
     for (int i = 0; i < STEPS; i++) {
-        cout << "Storage[" << i << "] = ";
-        cin >> storage[i];
-        if (storage[i] < 0) { 
-            negativeCount++; //Таймер від'ємних чисел
-        }
+        storage[i] = randomInt(MIN, MAX);
+        cout << "Storage[" << i << "] = " << storage[i] << endl;
+        if (storage[i] == MAX) { maxCount++; }
     }
-    cout << "\nResult: " << negativeCount << " negative elements\n";
+    
+    cout << "\nResult: " << maxCount << " max elements\n";
 
-    cin.get();
     return 0;
 }
