@@ -1,26 +1,35 @@
 // Заданий одномірний масив a[10]. Знайти кількість від’ємних елементів масиву
 
 #include <iostream>
+#include <random>
 
 using namespace std;
 
-int main() {
-    const int STEPS = 10; // Кількість елементів у масиві
-    int storage[STEPS]; // Оголошення масиву
-    int negativeCount = 0; // Лічильник від'ємних елементів
-    
-    // Введення елементів масиву та підрахунок негативних елементів
-    cout << "Please, Input the array elements:\n";
+// function generator random chars
+int randomInt(int min, int max) {
+    random_device rd;
+    mt19937 gen(rd());
 
-    for (int i = 0; i < STEPS; i++) {
-        cout << "Storage[" << i << "] = ";
-        cin >> storage[i];
-        if (storage[i] < 0) { 
-            negativeCount++; //Таймер від'ємних чисел
-        }
-    }
-    cout << "\nResult: " << negativeCount << " negative elements\n";
+    // distribution within a specified range
+    uniform_int_distribution<int> dist(min, max);
+
+    return dist(gen);
+}
+
+int main() {
+    const int Length = 10;
+    int negativeCount, storage[Length];
     
-    cin.get();
+    // filling the array
+    cout << "Array: ";
+    for (int i = 0; i < Length; i++) {
+        storage[i] = randomInt(-100, 100);
+        cout << storage[i] << " ";
+        if (storage[i] < 0) { negativeCount++;  }
+    }
+
+    cout << "\nResult: " << negativeCount << " negative elements\n";
+
     return 0;
 }
+
